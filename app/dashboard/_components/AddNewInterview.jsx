@@ -43,7 +43,7 @@ const AddNewInterview = () => {
       jobExperience +
       " Depends upon Job position,Job Description & years of Experience give us " +
       process.env.NEXT_PUBLIC_INTERVIEW_QUESTION_COUNT +
-      " Interview Question along with Answer in JSON Format, Give us Question and answer field on JSON And don't give explanation i need just the json to parse";
+      " Interview Question along with Answer in JSON Format, Give us Question and answer field on JSON And don't give explanation i need just the json to parse ";
     const result = await chatSession.sendMessage(InputPrompt);
     const MockJsonResp = await (result.response
       .text())
