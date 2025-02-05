@@ -6,13 +6,11 @@ import { useRouter } from "next/navigation";
 
 export default function Home() {
   const Router=useRouter();
-  const routing=()=>{
-    Router.push("/dashboard")
-  }
+
   return (
    <div>
     <h1>Home Page</h1>
-    <Button onClick={routing}>Start</Button>
+    <Button onClick={()=>Router.push('/dashboard')}>Start</Button>
    </div>
   );
   
