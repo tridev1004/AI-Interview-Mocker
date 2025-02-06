@@ -12,6 +12,7 @@ const QuestionsSection = ({ mockInterviewQuestion=[], activeQuestionIndex }) => 
         toast.error('Sorry,Your Browser does not support text to Speech')
        }
     }
+    console.log(mockInterviewQuestion)
   return (
     <div className="p-5 my-10 border rounded-lg">
       <div className="grid gap-5 gird-cols-2 md:grid-cols-3 lg:grid-cols-4">
