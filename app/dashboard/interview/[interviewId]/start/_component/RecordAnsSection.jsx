@@ -54,7 +54,6 @@ const RecordAnsSection = ({
   };
 
   const UpdateUserAnswer = async () => {
-    console.log(userAnswer);
 
     setLoading(true);
     const feedBackPrompt =
@@ -73,7 +72,6 @@ const RecordAnsSection = ({
       .replace("```json", "")
       .replace("```", "")
       .replace("**", "");
-    console.log(MockJsonResp);
     const JsonFeedBackResp = JSON.parse(MockJsonResp);
 
     const resp = await db.insert(UserAnswer).values({
