@@ -23,14 +23,13 @@ const InterviewList = () => {
         eq(MockInterview.createdBy, user?.primaryEmailAddress?.emailAddress)
       )
       .orderBy(desc(MockInterview.id));
-      console.log(result);
       setInterviewList(result);
       
   };
   return (
     <div>
-      <h2 className="font-medium text-xl">Previous Mock Interview</h2>
-      <div className="grid gid-col1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-3 ">
+      <h2 className="text-xl font-medium">Previous Mock Interview</h2>
+      <div className="grid gap-5 my-3 gid-col1 md:grid-cols-2 lg:grid-cols-3 ">
         {interviewList&&interviewList.map((interview, index) => (
             <InterviewItemCard interview={interview} key={index}/>
         ))}

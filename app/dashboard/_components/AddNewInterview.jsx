@@ -32,7 +32,6 @@ const AddNewInterview = () => {
   const onSubmit = async (e) => {
     setLoading(true);
     e.preventDefault();
-    console.log(jobDesc, jobExperience, jobPosition);
 
     const InputPrompt =
       "Job position : " +
@@ -49,8 +48,6 @@ const AddNewInterview = () => {
       .text())
       .replace("```json", "")
       .replace("```", "").replace("**",""); // Ensure to await here
-      console.log("Raw JSON String:", MockJsonResp);
-    console.log(JSON.parse(MockJsonResp));
     setJsonResponse(MockJsonResp);
     
     const response=await db.insert(MockInterview).values({
@@ -64,7 +61,6 @@ const AddNewInterview = () => {
 
 
     }).returning({mockId:MockInterview.mockId})
-    console.log("Inserted Id",response);
     
      
     
@@ -78,10 +74,10 @@ const AddNewInterview = () => {
   return (
     <div>
       <div
-        className="p-10 border rounded-lg bg-secondary hover:scale-105 hover:shadow-md cursor-pointer transition-all"
+        className="p-10 transition-all border rounded-lg cursor-pointer bg-secondary hover:scale-105 hover:shadow-md"
         onClick={() => setOpenDialog(true)}
       >
-        <h2 className=" text-lg text-center">+ Add New</h2>
+        <h2 className="text-lg text-center ">+ Add New</h2>
       </div>
       <Dialog open={openDialog}>
         <DialogContent className="max-w-2xl">
@@ -96,7 +92,7 @@ const AddNewInterview = () => {
                     Add Details about your job position/role, Job description
                     and years of experience
                   </h2>
-                  <div className="mt-7  my-3">
+                  <div className="my-3 mt-7">
                     <label>Job Role/Job Positon</label>
                     <Input
                       placeholder="Ex. Full Stack Developer"
@@ -104,7 +100,7 @@ const AddNewInterview = () => {
                       onChange={(event) => setJobPosition(event.target.value)}
                     />
                   </div>
-                  <div className=" my-3">
+                  <div className="my-3 ">
                     <label>Job Description/ Tech stack (In Short)</label>
                     <Textarea
                       placeholder="Ex. React,SpringBoot..."
@@ -112,7 +108,7 @@ const AddNewInterview = () => {
                       onChange={(event) => setJobDesc(event.target.value)}
                     />
                   </div>
-                  <div className=" my-3">
+                  <div className="my-3 ">
                     <label>Years of experience</label>
                     <Input
                       placeholder="Ex.5"
@@ -123,7 +119,7 @@ const AddNewInterview = () => {
                     />
                   </div>
                 </div>
-                <div className="flex gap-5 justify-end">
+                <div className="flex justify-end gap-5">
                   <Button
                     type="button"
                     onClick={() => setOpenDialog(false)}
