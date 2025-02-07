@@ -14,7 +14,6 @@ const StartInterview = ({params}) => {
     const[mockInterviewQuestion,setmockInterviewQuestion]=useState();
     const[activeQuestionIndex, setActiveQuestionIndex]=useState(0); 
     useEffect(()=>{
-    console.log(params.interviewId);
              
         GetInterviewDetails();
 
@@ -28,16 +27,14 @@ const StartInterview = ({params}) => {
 
       .where(eq(MockInterview.mockId, params.interviewId));
 
-    console.log(result);
     const jsonMockResp=JSON.parse(result[0].jsonMockResp)
-    console.log(jsonMockResp);
     
     setmockInterviewQuestion(jsonMockResp);
     setInterviewData(result[0]);
   };
   return (
     <div>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
+        <div className='grid grid-cols-1 gap-10 md:grid-cols-2'>
             {/* {Questions} */}
             <QuestionsSection mockInterviewQuestion={mockInterviewQuestion} 
             activeQuestionIndex={activeQuestionIndex}/>

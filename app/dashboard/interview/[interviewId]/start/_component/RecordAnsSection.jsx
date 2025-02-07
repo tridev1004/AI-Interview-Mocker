@@ -47,7 +47,6 @@ const RecordAnsSection = ({
   const StartStopRecording = async () => {
     if (isRecording) {
       stopSpeechToText();
-       console.log(userAnswer);
     
     } else {
       startSpeechToText();
@@ -98,9 +97,9 @@ const RecordAnsSection = ({
   };
 
   return (
-    <div className="flex items-center justify-center flex-col">
+    <div className="flex flex-col items-center justify-center">
       {" "}
-      <div className="flex flex-col mt-20 justify-center items-center bg-black rounded-lg p-5">
+      <div className="flex flex-col items-center justify-center p-5 mt-20 bg-black rounded-lg">
         <img
           src={"/webcam.png"}
           width={200}
