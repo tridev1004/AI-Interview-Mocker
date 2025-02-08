@@ -123,7 +123,6 @@ const RecordAnsSection = ({
           "Record Answer"
         )}
       </Button>
-      {/* <Button onClick={() => console.log(userAnswer)}>Show User Answer</Button> */}
     </div>
   );
 };
