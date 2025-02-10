@@ -115,10 +115,6 @@ const RecordAnsSection = ({
         className="my-10"
         onClick={StartStopRecording}
       >
-
-
-
-        
         {isRecording ? (
           <h2 className="text-red-600">
             <Mic /> Stop Recording
